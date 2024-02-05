@@ -1,4 +1,5 @@
 groups:
+
 - name: devopscube demo alert
   rules:
   - alert: High Pod Memory
@@ -12,10 +13,10 @@ groups:
 - name: nodejsApp
   rules:
   - record: job:up
-    expr: up{ instance="master03"}
-  - alert: master03
+    expr: up{instance="master02"}
+  - alert: master02
     expr: job:up == 0
-    for: 10s # will fire allert if it is down for 5 min
+    for: 10s # will fire alert if it is down for 5 min
     labels:
       severity: critical
     annotations:
