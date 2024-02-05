@@ -16,3 +16,5 @@ groups:
   - alert: master-1
     expr: up{instance="master-1"}
     for: 1m
+    labels:
+      severity: slack
