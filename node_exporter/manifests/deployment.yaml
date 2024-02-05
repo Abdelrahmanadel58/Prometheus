@@ -22,7 +22,7 @@ spec:
           containerPort: 9100
           hostPort: 9100
       tolerations:
-      - key: "node-role.kubernetes.io/master"
+      - key: "node-role.kubernetes.io/control-plane"
         effect: "NoSchedule"
       hostNetwork: true
       hostPID: true
