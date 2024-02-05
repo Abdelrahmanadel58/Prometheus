@@ -9,8 +9,6 @@ groups:
     annotations:
       summary: High Memory Usage
 
-- name: nodejsApp
-  rules:
   - record: job:up
     expr: up{instance="master02"}
   - alert: master02
