@@ -9,12 +9,14 @@ groups:
     annotations:
       summary: High Memory Usage
 
-- name: master-1
+- name: nodejsApp
   rules:
-  - record: job:up
-    expr: up{instance="master-1"}
-  - alert: master-1
-    expr: up{instance="master-1"}
-    for: 1m
-    labels:
-      severity: slack
+    - record: job:up
+      expr: up{ instance="master03"}
+    - alert: master03
+      expr: job:up == 0
+      for: 10s # will fire allert if it is down for 5 min
+      labels:
+        severity: critical
+      annotations:
+        description: "yalahwy l app ely esmo {{ .Labels.job }} is down w l value b {{ .Value }}"
