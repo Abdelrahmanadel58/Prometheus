@@ -1,0 +1,13 @@
+namespace: monitoring
+resources:
+- manifests/clusterrole.yaml
+- manifests/deployment.yaml
+- manifests/service.yaml
+- manifests/pvc.yaml
+configMapGenerator:
+- name: prometheus-server-conf
+  files:
+    - manifests/config-files/prometheus.rules
+    - manifests/config-files/prometheus.yaml
+generatorOptions:
+  disableNameSuffixHash: true
