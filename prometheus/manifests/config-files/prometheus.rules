@@ -4,9 +4,9 @@ groups:
 - name: master-1
   rules:
   - record: job:up
-    expr: up{job="kubernetes_io_hostname=master-1"}
+    expr: up{instance="master-1"}
   - alert: master-1
-    expr: sum(container_memory_usage_bytes) > 1
+    expr: up{instance="master-1"}
     for: 1m
     labels:
       severity: slack
