@@ -4,16 +4,15 @@ metadata:
   name: prometheus-node-exporter
   namespace: kube-system
   labels:
-    app: prometheus-node-exporter
+    name: prometheus-node-exporter
 spec:
   selector:
     matchLabels:
       name: prometheus-node-exporter
   template:
     metadata:
-      name: prometheus-node-exporter
       labels:
-        app: prometheus-node-exporter
+        name: prometheus-node-exporter
     spec:
       containers:
       - image: prom/node-exporter
@@ -25,9 +24,9 @@ spec:
           containerPort: 9100
           hostPort: 9100
       tolerations:
-      - key: "node-role.kubernetes.io/control-plane"
+      - key: node-role.kubernetes.io/control-plane
         operator: Exists
-        effect: "NoSchedule"
+        effect: NoSchedule
       hostNetwork: true
       hostPID: true
       hostIPC: true
