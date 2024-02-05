@@ -1,9 +1,5 @@
 namespace: monitoring
 resources:
-- manifests/clusterrole.yaml
-- manifests/deployment.yaml
-- manifests/service.yaml
-- manifests/pvc.yaml
 - manifests/alertmanager.yaml
 # this for metrics
 - manifests/kubeMetrics/cluster-role-binding.yaml
