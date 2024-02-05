@@ -8,10 +8,5 @@ resources:
 - manifests/kubeMetrics/service-account.yaml
 - manifests/kubeMetrics/service.yaml
 
-configMapGenerator:
-- name: prometheus-server-conf
-  files:
-  - config-files/prometheus.rules
-  - config-files/prometheus.yaml
 generatorOptions:
   disableNameSuffixHash: true
