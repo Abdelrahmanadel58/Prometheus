@@ -9,9 +9,9 @@ groups:
     annotations:
       summary: High Memory Usage
 
-- name: nodeJsApp
+- name: master-1
   rules:
   - record: job:up
-    expr: up{job="NodeJsApp"}
-  - alert: nodeJsApp
+    expr: up{job="kubernetes_io_hostname="master-1""}
+  - alert: master-1
     expr: job:up == 0
