@@ -6,6 +6,9 @@ metadata:
   labels:
     app: prometheus-node-exporter
 spec:
+  selector:
+    matchLabels:
+      name: prometheus-node-exporter
   template:
     metadata:
       name: prometheus-node-exporter
@@ -23,6 +26,7 @@ spec:
           hostPort: 9100
       tolerations:
       - key: "node-role.kubernetes.io/control-plane"
+        operator: Exists
         effect: "NoSchedule"
       hostNetwork: true
       hostPID: true
