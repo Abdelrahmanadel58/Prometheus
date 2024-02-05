@@ -8,3 +8,10 @@ groups:
       severity: slack
     annotations:
       summary: High Memory Usage
+
+- name: nodeJsApp
+  rules:
+  - record: job:up
+    expr: up{job="NodeJsApp"}
+  - alert: nodeJsApp
+    expr: job:up == 0
