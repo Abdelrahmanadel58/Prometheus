@@ -1,0 +1,6 @@
+namespace: monitoring
+resources:
+- manifests/clusterrole.yaml
+- manifests/deployment.yaml
+- manifests/service.yaml
+- manifests/pvc.yaml
