@@ -1,0 +1,6 @@
+namespace: monitoring
+resources:
+- manifests/deployment.yaml
+- manifests/service.yaml
+generatorOptions:
+  disableNameSuffixHash: true
