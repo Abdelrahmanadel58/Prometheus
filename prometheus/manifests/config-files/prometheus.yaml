@@ -68,9 +68,12 @@ scrape_configs:
     - source_labels: [__meta_kubernetes_pod_name]
       action: replace
       target_label: kubernetes_pod_name
-  - job_name: 'kube-state-metrics'
+  - job_name: 'grafana'
     static_configs:
       - targets: ['kube-state-metrics.monitoring.svc.cluster.local:8080']
+  - job_name: 'kube-state-metrics'
+    static_configs:
+      - targets: ['grafana.monitoring.svc.cluster.local:3000']
   - job_name: 'kubernetes-cadvisor'
     scheme: https
     tls_config:
